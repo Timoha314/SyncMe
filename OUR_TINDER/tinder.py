@@ -21,12 +21,13 @@ def register():
         username = request.form['username']
         email = request.form['email']
 
+        # Проверка на существующего пользователя
         existing_user = User.query.filter((User.email == email) | (User.username == username)).first()
-
         if existing_user:
             flash("Пользователь с таким именем или email уже существует.", "error")
             return redirect(url_for('register'))
 
+        # Создание нового пользователя
         new_user = User(username=username, email=email)
         try:
             db.session.add(new_user)
@@ -45,14 +46,14 @@ def entrance():
     if request.method == 'POST':
         username = request.form['username']
 
-        # Проверка наличия пользователя в базе данных
+        # Проверка наличия пользователя
         user = User.query.filter_by(username=username).first()
         if user:
-            session['user_id'] = user.id  # Сохранение id пользователя в сессии
+            session['user_id'] = user.id
             flash("Вход выполнен успешно!", "success")
             return redirect(url_for('profile'))
         else:
-            flash("Неверное имя пользователя.", "error")
+            flash("Пользователь с таким именем не найден. Пожалуйста, проверьте введенные данные.", "error")
             return redirect(url_for('entrance'))
     return render_template('entrance.html')
 
@@ -90,6 +91,7 @@ def users():
     # Запрос всех пользователей из базы данных
     all_users = User.query.all()
     return render_template('users.html', users=all_users)
+
 @app.route('/logout')
 def logout():
     session.pop('user_id', None)
