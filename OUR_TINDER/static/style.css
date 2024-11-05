@@ -10,7 +10,8 @@
 body {
     font-family: 'Poppins', sans-serif;
     color: var(--color-text);
-    background: var(--gradient-background);
+    background: -webkit-linear-gradient(32deg, #0c00ff,#9c00ff);
+    background: linear-gradient(32deg, #0c00ff,#9c00ff);
     margin: 0;
     padding: 0;
     display: flex;
