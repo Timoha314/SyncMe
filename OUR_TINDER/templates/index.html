@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SyncMe</title>
-</head>
-<body>
-    <div class="container text-center mt-5">
-        <h1>Добро пожаловать в SyncMe!</h1>
-        <a href="{{ url_for('register') }}" class="btn btn-primary mt-3">Регистрация</a>
-        <a href="{{ url_for('entrance') }}" class="btn btn-secondary mt-3">Вход</a>
-    </div>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+<div class="welcome-page">
+    <h1>Welcome to SyncMe</h1>
+    <p>About SyncMe</p>
+</div>
+{% endblock %}

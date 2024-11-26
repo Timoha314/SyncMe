@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Профиль</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">.
-</head>
-<body>
-    <div class="container mt-5">
-        <h2>Профиль пользователя</h2>
-        <p><strong>Имя пользователя:</strong> {{ user.username }}</p>
-        <p><strong>Email:</strong> {{ user.email }}</p>
-        <form action="{{ url_for('delete_profile') }}" method="POST" onsubmit="return confirm('Вы уверены, что хотите удалить профиль?');">
-            <button type="submit" class="btn btn-danger">Удалить профиль</button>
-        </form>
+{% extends "base.html" %}
 
-        <a href="{{ url_for('logout') }}" class="btn btn-secondary">Выйти</a>
+{% block content %}
+<div class="profile-page">
+    <div class="profile-header">
+        <div class="profile-photo">PHOTO</div>
+        <div class="profile-info">
+            <h3>{{ user.username }}</h3>
+            <p>About yourself</p>
+        </div>
     </div>
-</body>
-</html>
+    <button>Edit Text</button>
+</div>
+{% endblock %}
