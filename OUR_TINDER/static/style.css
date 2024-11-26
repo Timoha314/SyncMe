@@ -1,184 +1,82 @@
-:root {
-    --color-primary: #6A0DAD; /* Темно-фиолетовый */
-    --color-secondary: #FF007F; /* Ярко-розовый */
-    --color-text: #222222; /* Тёмный текст */
-    --gradient-background: linear-gradient(135deg, #6A0DAD, #FF007F); /* Градиентный фон */
-    --color-button-text: #FFFFFF; /* Текст на кнопках */
-}
-
-/* Стили для всего приложения */
 body {
-    font-family: 'Poppins', sans-serif;
-    color: var(--color-text);
-    background: -webkit-linear-gradient(32deg, #0c00ff,#9c00ff);
-    background: linear-gradient(32deg, #0c00ff,#9c00ff);
     margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #8e44ad, #c0392b);
+    color: #fff;
 }
 
-.container {
-    max-width: 500px;
-    width: 90%;
-    padding: 30px;
-    background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон для читаемости */
-    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
 
-/* Заголовки */
-h1, h2 {
-    color: var(--color-primary);
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 15px;
-}
-
-/* Кнопки */
-button, .btn {
-    width: 100%;
-    padding: 15px;
-    margin-top: 20px;
-    font-size: 1.2em;
+.navbar .logo {
+    font-size: 24px;
     font-weight: 600;
-    color: var(--color-button-text);
+}
+
+.navbar .menu a {
+    margin: 0 10px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.welcome-page, .form-container, .profile-page {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.form-container input, .form-container button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-container input {
+    width: 80%;
+}
+
+.form-container button {
+    background: #e74c3c;
+    color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
 }
 
-.btn-primary {
-    background: var(--gradient-primary);
-}
-
-.btn-secondary {
-    background: var(--gradient-secondary);
-}
-
-button:hover, .btn:hover {
-    opacity: 0.9;
-    transform: scale(1.02);
-}
-
-/* Формы */
-input[type="text"], input[type="email"], input[type="password"], input[type="date"] {
-    width: 100%;
-    padding: 12px;
-    margin-top: 15px;
-    font-size: 1.1em;
-    border: 1px solid #bbb;
-    border-radius: 8px;
-    transition: border-color 0.3s;
-}
-
-input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="date"]:focus {
-    border-color: var(--color-primary);
-    outline: none;
-}
-
-/* Flash сообщения */
-.flash-success {
-    color: var(--color-primary);
-    background-color: #eaf3ff;
-    padding: 12px;
-    border: 1px solid var(--color-primary);
-    margin-bottom: 20px;
-    border-radius: 8px;
-    font-size: 1em;
-    text-align: center;
-}
-
-.flash-error {
-    color: var(--color-secondary);
-    background-color: #ffe6ef;
-    padding: 12px;
-    border: 1px solid var(--color-secondary);
-    margin-bottom: 20px;
-    border-radius: 8px;
-    font-size: 1em;
-    text-align: center;
-}
-
-/* Индивидуальные страницы */
-
-/* index.html */
-.index-welcome {
-    font-size: 1.8em;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin-bottom: 20px;
-}
-
-.index-link {
-    text-align: center;
-    margin-top: 25px;
-    font-size: 1.1em;
-}
-
-/* register.html */
-.register-header {
-    font-size: 1.8em;
-    text-align: center;
-    color: var(--color-secondary);
-    margin-bottom: 25px;
-}
-
-/* entrance.html */
-.entrance-header {
-    font-size: 1.8em;
-    text-align: center;
-    color: var(--color-primary);
-    margin-bottom: 25px;
-}
-
-/* profile.html */
-.profile-header {
-    font-size: 2em;
-    font-weight: 700;
-    color: var(--color-primary);
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.profile-info {
+.profile-page {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.profile-info p {
-    font-size: 1.3em;
-    margin: 8px 0;
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
-.profile-info strong {
-    color: var(--color-secondary);
-}
-
-/* Кнопка удаления профиля */
-.btn-delete {
-    background: #ff4c61;
-    margin-top: 20px;
-    padding: 15px;
-    color: var(--color-button-text);
-    font-size: 1.2em;
-}
-.btn-delete:hover {
-    background: #ff1a3b;
-}
-
-/* Навигационные ссылки */
-a {
-    color: var(--color-primary);
-    text-decoration: none;
-    font-size: 1.1em;
-}
-
-a:hover {
-    color: var(--color-secondary);
-    text-decoration: underline;
+.profile-photo {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
 }
