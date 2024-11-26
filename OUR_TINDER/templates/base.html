@@ -10,14 +10,14 @@
 <body>
     <div class="app-container">
         <header class="navbar">
-            <div class="logo">SyncMe</div>
+            <div class="logo"><a href="{{ url_for('index') }}">SyncMe</a></div>
             <nav class="menu">
                 <a href="{{ url_for('index') }}">About SyncMe</a>
                 {% if session.get('user_id') %}
                     <a href="{{ url_for('profile') }}">Profile</a>
                     <a href="{{ url_for('logout') }}">Log Out</a>
                 {% else %}
-                    <a href="{{ url_for('entrance') }}">Log In</a>
+                    <a href="{{ url_for('entrance') }}">Sign In</a>
                     <a href="{{ url_for('register') }}">Sign Up</a>
                 {% endif %}
                 <a href="{{ url_for('users') }}">Chat</a>

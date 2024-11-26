@@ -1,12 +1,19 @@
-body {
+html, body {
+    height: 100%;
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #8e44ad, #c0392b);
+    background: linear-gradient(to bottom,
+        #A34054 0%,
+        #8A2E4C 20%,
+        #662249 40%,
+        #4E1C4A 60%,
+        #301840 80%,
+        #1B1931 100%);
     color: #fff;
 }
 
 .app-container {
-    max-width: 1200px;
+    max-width: 12000px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -17,12 +24,20 @@ body {
     align-items: center;
     padding: 10px 20px;
     background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    border-radius: 100px;
 }
 
-.navbar .logo {
+.navbar .logo a{
+    text-decoration: none;
+    box-shadow: none;
+    color: #fff;
     font-size: 24px;
     font-weight: 600;
+}
+
+.navbar .logo a:hover {
+    background-color: none; /* Цвет кнопки при наведении */
+    color: #4E1C4A; /* Цвет текста при наведении */
 }
 
 .navbar .menu a {
@@ -32,9 +47,17 @@ body {
     font-weight: 500;
 }
 
-.welcome-page, .form-container, .profile-page {
+.navbar .menu a:hover {
+    background-color: none; /* Цвет кнопки при наведении */
+    color: #4E1C4A; /* Цвет текста при наведении */
+}
+
+.form-container, .profile-page {
     text-align: center;
+    max-width: 1000px;
     margin-top: 50px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
 .form-container input, .form-container button {
