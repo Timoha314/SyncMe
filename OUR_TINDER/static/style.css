@@ -55,9 +55,13 @@ html, body {
 .form-container, .profile-page {
     text-align: center;
     max-width: 1000px;
-    margin-top: 50px;
+    margin: 30px auto; /* Центрирование по горизонтали */
     background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    border-radius: 10px; display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    flex-direction:column;
+    align-items: center; /* Центрирование по вертикали */
+    height: 50vh; /* Высота контейнера для центрирования по вертикали */
 }
 
 .form-container input, .form-container button {
