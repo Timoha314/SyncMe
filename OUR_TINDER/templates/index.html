@@ -1,16 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+
+{% block content %}
 <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SyncMe</title>
+    <title>Центрирование текста с границей</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 80vh; /* Высота контейнера */
+            background-color: none; /* Цвет фона */
+        }
+        .welcome-page {
+            background-color: rgba(0, 0, 0, 0.2); /* Полупрозрачный фон */
+            border-radius: 10px; /* Сглаженные углы */
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <div class="container text-center mt-5">
-        <h1>Добро пожаловать в SyncMe!</h1>
-        <a href="{{ url_for('register') }}" class="btn btn-primary mt-3">Регистрация</a>
-        <a href="{{ url_for('entrance') }}" class="btn btn-secondary mt-3">Вход</a>
+    <div class="container">
+        <div class="welcome-page">
+            <h1>Welcome to SyncMe</h1>
+            <p>About SyncMe</p>
+            <p>A web dating app that shows compatibility based on interests and likes in social networks</p>
+            <p><strong>Developers: Стаселько Илья, Басалыга Тимофей</strong></p>
+            <p><strong>Designers: Косаревская Елизавета, Зарубайко Яна</strong></p>
+        </div>
     </div>
 </body>
-</html>
+{% endblock %}
