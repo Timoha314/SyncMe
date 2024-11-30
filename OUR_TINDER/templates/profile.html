@@ -6,7 +6,18 @@
         <div class="profile-photo">PHOTO</div>
         <div class="profile-info">
             <h3>{{ user.username }}</h3>
-            <p>About yourself</p>
+            <p><strong>Instagram:</strong> <a href="https://instagram.com/{{ user.instagram }}" target="_blank">{{ user.instagram }}</a></p>
+            <p><strong>Gender:</strong> {{ user.gender }}</p>
+
+            <!-- Вычисление возраста -->
+            {% if user.birth_date %}
+                {% set current_year = current_date.year %}
+                {% set birth_year = user.birth_date.year %}
+                {% set age = current_year - birth_year %}
+                <p><strong>Age:</strong> {{ age }}</p>
+            {% else %}
+                <p><strong>Age:</strong> Not specified</p>
+            {% endif %}
         </div>
     </div>
     <button>Edit Text</button>
